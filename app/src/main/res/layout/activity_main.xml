@@ -1,0 +1,53 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="#FFF9C4">
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2">
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="USER ID"
+            android:id="@+id/et_username"
+            android:inputType="textCapWords" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:hint="PASSWORD"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_password"
+            android:layout_marginBottom="30dp"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btn_Login"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/light_steel_blue"
+            android:text="Login" />
+    </LinearLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleLargeInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbbar"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+    />
+
+
+</RelativeLayout>
+

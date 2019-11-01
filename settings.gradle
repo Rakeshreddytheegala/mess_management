@@ -1,0 +1,2 @@
+include ':app', ':jtds-1.2.7'
+rootProject.name='mess_management'
