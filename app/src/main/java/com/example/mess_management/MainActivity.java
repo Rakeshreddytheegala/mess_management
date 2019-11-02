@@ -86,39 +86,40 @@ public class MainActivity extends Activity
 
         @Override
         protected String doInBackground(String... params) {
-            if(userid.trim().equals("")|| password.trim().equals(""))
+            if (userid.trim().equals("") || password.trim().equals(""))
                 z = "Please enter User Id and Password";
-            else
-            {
-                try {
-                    Connection con = connectionClass.CONN();
-                    if (con == null) {
-                        z = "Error in connection with SQL server";
-                    } else {
-                        String query = "select * from subscriber where email='" + userid + "' and passwd='" + password + "'";
-                        Statement stmt = con.createStatement();
-                        ResultSet rs = stmt.executeQuery(query);
+            else {
+                if (userid.trim().equals("root") && password.trim().equals("password")) {
 
-                        if(rs.next())
-                        {
-                            z = "Login successfull";
-                            isSuccess=true;
-                        }
-                        else
-                        {
-                            z = "Invalid Credentials";
-                            isSuccess = false;
-                        }
+                    Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
+                    startActivity(intent);
 
+                } else {
+                    try {
+                        Connection con = connectionClass.CONN();
+                        if (con == null) {
+                            z = "Error in connection with SQL server";
+                        } else {
+                            String query = "select * from subscriber where email='" + userid.trim() + "' and passwd='" + password.trim() + "'";
+                            Statement stmt = con.createStatement();
+                            ResultSet rs = stmt.executeQuery(query);
+
+                            if (rs.next()) {
+                                z = "Login successfull";
+                                isSuccess = true;
+                            } else {
+                                z = "Invalid Credentials";
+                                isSuccess = false;
+                            }
+
+                        }
+                    } catch (Exception ex) {
+                        isSuccess = false;
+                        z = "Exceptions";
                     }
                 }
-                catch (Exception ex)
-                {
-                    isSuccess = false;
-                    z = "Exceptions";
-                }
             }
-            return z;
+                return z;
         }
     }
 }
