@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class ConnectionClass {
     String classs = "com.mysql.jdbc.Driver";
 
-    String url = "jdbc:mysql://10.150.38.202/raspi";
+    String url = "jdbc:mysql://172.16.116.130/raspi";
     String un = "Mess";
     String password = "password";
 
