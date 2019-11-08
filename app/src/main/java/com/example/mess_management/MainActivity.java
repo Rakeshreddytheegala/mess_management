@@ -89,12 +89,23 @@ public class MainActivity extends Activity
             if (userid.trim().equals("") || password.trim().equals(""))
                 z = "Please enter User Id and Password";
             else {
-                if (userid.trim().equals("root") && password.trim().equals("password")) {
+                if (userid.trim().equals("root") && password.trim().equals("scanner")) {
 
                     Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
                     startActivity(intent);
 
-                } else {
+                }
+                else if (userid.trim().equals("root") && password.trim().equals("mess")){
+
+                    Intent intent = new Intent(getApplicationContext(),messActivity.class);
+                    startActivity(intent);
+                }
+                else if (userid.trim().equals("root") && password.trim().equals("payment")){
+
+                    Intent intent = new Intent(getApplicationContext(),non_subs_pay.class);
+                    startActivity(intent);
+                }
+                else {
                     try {
                         Connection con = connectionClass.CONN();
                         if (con == null) {
