@@ -1,9 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".messActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/topLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:text=""
+            android:textSize="25sp" />
+
+        <Spinner
+            android:id="@+id/meal_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/meal_array"
+            android:focusable="auto"
+            android:hint="Select Meal"
+            android:spinnerMode="dropdown" />
+
+        <TableLayout
+            android:id="@+id/table_mess"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/waste_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Total Wastage"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/waste_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0 kgs"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/income_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Total Income"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/income_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Rs. 0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/review_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Average Rating"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/review_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/counter1_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Consumption at counter1"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/counter1_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0 kgs"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/counter2_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Consumption at counter2"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/counter2_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0 kgs"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/people_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Head Count"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/people_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</LinearLayout>

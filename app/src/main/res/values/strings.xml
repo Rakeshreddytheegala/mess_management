@@ -11,4 +11,9 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_after_login">After_login</string>
     <string name="title_activity_scanner">scannerActivity</string>
+    <string-array name="meal_array">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
 </resources>
