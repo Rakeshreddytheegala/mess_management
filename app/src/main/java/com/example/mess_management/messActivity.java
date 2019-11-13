@@ -17,6 +17,7 @@ import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class messActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -27,6 +28,7 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
     String Date="";
     Spinner spinner;
     String c= "0";
+    SimpleDateFormat sdf;
     ConnectionClass connectionClass;
     int eaters=0;
     int income;
@@ -56,6 +58,9 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
+                Calendar cal1 = Calendar.getInstance();
+                cal1.set(cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),1);
+
                 DatePickerDialog dialog = new DatePickerDialog(
                         messActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -63,6 +68,8 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
                         year,month,day
                 );
 
+                dialog.getDatePicker().setMinDate(cal1.getTimeInMillis());
+                dialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
             }
@@ -93,7 +100,6 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
             Log.d("date",date);
             fetch_data();
         }
-
     }
 
     @Override

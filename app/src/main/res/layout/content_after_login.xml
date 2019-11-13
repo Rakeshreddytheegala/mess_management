@@ -8,4 +8,210 @@
     tools:context=".After_login"
     tools:showIn="@layout/activity_after_login">
 
+    <LinearLayout
+        android:id="@+id/topLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/date_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:hint="Select Date"
+            android:text=""
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/meal_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/meal_array"
+            android:focusable="auto"
+            android:hint="Select Meal"
+            android:spinnerMode="dropdown" />
+        <TableLayout
+            android:id="@+id/table_subs_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/Cost"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Payment Amount"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/pay_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Rs 0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayer"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableLayout
+            android:id="@+id/table_subs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/waste_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Total Wastage"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/waste_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0 kgs"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/income_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Total due for month"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/income_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Rs. 0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/carb_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Carbs Intake"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/carb_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/fat_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Fat Intake"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/fat_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/prot_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Protein Intake"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/prot_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0.0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/cal_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Calories Intake"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/cal_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
