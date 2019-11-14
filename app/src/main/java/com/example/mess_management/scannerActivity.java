@@ -40,6 +40,7 @@ public class scannerActivity extends AppCompatActivity implements ZXingScannerVi
     private ZXingScannerView scannerView;
     String clientId = MqttClient.generateClientId();
     String MQTTHOST = "tcp://172.16.116.131:1883";
+    String channel;
     MqttAndroidClient client;
 
     @Override
@@ -47,6 +48,8 @@ public class scannerActivity extends AppCompatActivity implements ZXingScannerVi
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
+
+        channel = getIntent().getExtras().getString("channel");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
@@ -149,7 +152,7 @@ public class scannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     public void Publish(String Plate_ID){
 
-        String topic = "ch1";
+        String topic = channel;
         try {
             client.publish(topic, Plate_ID.getBytes(),0,false);
         } catch ( MqttException e) {

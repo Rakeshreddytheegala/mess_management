@@ -217,21 +217,26 @@ public class After_login extends AppCompatActivity implements AdapterView.OnItem
                 total_waste.setText(Waste);
                 total_due.setText(Double.toString(Cost));
 
-                if(Carb < (45*Cal)/100 || Carb > (65*Cal)/100)
-                    carbView.setTextColor(getResources().getColor(R.color.dark_red));
-                carbView.setText(Float.toString(Carb));
-
-                if(Fat < (20*Cal)/100 || Fat > (35*Cal)/100)
-                    fatView.setTextColor(getResources().getColor(R.color.dark_red));
-                fatView.setText(Float.toString(Fat));
-
-                if(Protien < 40 || Protien > 64)
-                    protView.setTextColor(getResources().getColor(R.color.dark_red));
-                protView.setText(Float.toString(Protien));
-
-                if(Cal < 1800 || Cal > 3200)
+                if(Cal < 1800 || Cal > 3200) {
                     calView.setTextColor(getResources().getColor(R.color.dark_red));
+                    carbView.setTextColor(getResources().getColor(R.color.dark_red));
+                    fatView.setTextColor(getResources().getColor(R.color.dark_red));
+                    protView.setTextColor(getResources().getColor(R.color.dark_red));
+                }
+                else{
+                    if (Carb < (45 * Cal) / 100 || Carb > (65 * Cal) / 100)
+                        carbView.setTextColor(getResources().getColor(R.color.dark_red));
+
+                    if (Fat < (20 * Cal) / 100 || Fat > (35 * Cal) / 100)
+                        fatView.setTextColor(getResources().getColor(R.color.dark_red));
+
+                    if (Protien < 40 || Protien > 64)
+                        protView.setTextColor(getResources().getColor(R.color.dark_red));
+                }
                 calView.setText(Float.toString(Cal));
+                protView.setText(Float.toString(Protien));
+                fatView.setText(Float.toString(Fat));
+                carbView.setText(Float.toString(Carb));
             }
         }
         catch (Exception ex)

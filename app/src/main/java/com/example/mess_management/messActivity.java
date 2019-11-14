@@ -22,13 +22,14 @@ import java.util.Calendar;
 
 public class messActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView dateSelect,avg_waste,avg_income,people,cons_counter1,cons_counter2;
+    TextView dateSelect,avg_waste,avg_income,people,cons_counter1,cons_counter2,rating_1,rating_2,rating_3,rating_4,rating_5,avg_rating;
     DatePickerDialog.OnDateSetListener dateSetListener;
     String date="";
     String Date="";
     Spinner spinner;
     String c= "0";
     SimpleDateFormat sdf;
+    int[] ratingCount = new int[20];
     ConnectionClass connectionClass;
     int eaters=0;
     int income;
@@ -46,6 +47,12 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
         people = findViewById(R.id.people_amt);
         cons_counter1 = findViewById(R.id.counter1_amt);
         cons_counter2 = findViewById(R.id.counter2_amt);
+        rating_1 = findViewById(R.id.rating_1);
+        rating_2 = findViewById(R.id.rating_2);
+        rating_3 = findViewById(R.id.rating_3);
+        rating_4 = findViewById(R.id.rating_4);
+        rating_5 = findViewById(R.id.rating_5);
+        avg_rating = findViewById(R.id.rating_amt);
 
         connectionClass = new ConnectionClass();
 
@@ -161,6 +168,38 @@ public class messActivity extends AppCompatActivity implements AdapterView.OnIte
                 people.setText(temp);
                 temp = Integer.toString(income);
                 avg_income.setText(temp);
+
+                query = "SELECT review FROM rating where date = '"+ date +"'";
+                stmt = con.createStatement();
+                rs = stmt.executeQuery(query);
+                int i=0;
+                Double ave=0.0;
+                int rating;
+
+                for (int j=0;j<5;j++)
+                    ratingCount[j]=0;
+
+                while(rs.next()){
+                    i++;
+                    rating = Integer.parseInt(rs.getString("review"));
+                    ave = ((rating + ave*(i-1))*(1.0))/i;
+                    ratingCount[rating-1]++;
+                }
+
+                if (ave < 2.5)
+                    avg_rating.setTextColor(getResources().getColor(R.color.dark_red));
+                else if (ave > 3.5)
+                    avg_rating.setTextColor(getResources().getColor(R.color.green));
+
+                avg_rating.setText(Double.toString(ave));
+                rating_1.setText(Integer.toString(ratingCount[0]));
+                rating_2.setText(Integer.toString(ratingCount[0]));
+                rating_3.setText(Integer.toString(ratingCount[0]));
+                rating_4.setText(Integer.toString(ratingCount[0]));
+                rating_5.setText(Integer.toString(ratingCount[0]));
+
+
+
             }
         } catch (Exception ex) {
             Toast.makeText(messActivity.this,"Some Unexpected Error Occured",Toast.LENGTH_SHORT).show();

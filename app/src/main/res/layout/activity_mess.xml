@@ -87,27 +87,6 @@
                 android:stretchColumns="1">
 
                 <TextView
-                    android:id="@+id/review_col"
-                    android:layout_weight="2"
-                    android:padding="3dip"
-                    android:text="Average Rating"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
-
-                <TextView
-                    android:id="@+id/review_amt"
-                    android:layout_weight="2"
-                    android:padding="3dip"
-                    android:text="0.0"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:stretchColumns="1">
-
-                <TextView
                     android:id="@+id/counter1_col"
                     android:layout_weight="2"
                     android:padding="3dip"
@@ -174,6 +153,157 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/table_mess_rating"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/rating_col"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Average Rating"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_amt"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:id="@+id/rat_val_head"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="Rating"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rat_amt_head"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="No. of people"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_1"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="2"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_2"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="3"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_3"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="4"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_4"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="5"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/rating_5"
+                    android:layout_weight="2"
+                    android:padding="3dip"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
 
     </LinearLayout>
 </LinearLayout>

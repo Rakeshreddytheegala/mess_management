@@ -89,22 +89,43 @@ public class MainActivity extends Activity
             if (userid.trim().equals("") || password.trim().equals(""))
                 z = "Please enter User Id and Password";
             else {
-                if (userid.trim().equals("root") && password.trim().equals("scanner")) {
+                if (userid.trim().equals("root")) {
 
-                    Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
-                    startActivity(intent);
+                    if(password.trim().equals("scanner_entry")){
+                        Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
+                        intent.putExtra("channel","entry");
+                        startActivity(intent);
+                    }
+                    else if(password.trim().equals("scanner_1")){
+                        Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
+                        intent.putExtra("channel","counter1");
+                        startActivity(intent);
+                    }
+                    else if(password.trim().equals("scanner_2")){
+                        Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
+                        intent.putExtra("channel","counter2");
+                        startActivity(intent);
+                    }
+                    else if(password.trim().equals("scanner_waste")){
+                        Intent intent = new Intent(getApplicationContext(), scannerActivity.class);
+                        intent.putExtra("channel","waste");
+                        startActivity(intent);
+                    }
+                    else if (password.trim().equals("mess")){
 
+                        Intent intent = new Intent(getApplicationContext(),messActivity.class);
+                        startActivity(intent);
+                    }
+                    else if (password.trim().equals("payment")){
+
+                        Intent intent = new Intent(getApplicationContext(),non_subs_pay.class);
+                        startActivity(intent);
+                    }
+
+                    else
+                        z = "Invalid Credentials";
                 }
-                else if (userid.trim().equals("root") && password.trim().equals("mess")){
 
-                    Intent intent = new Intent(getApplicationContext(),messActivity.class);
-                    startActivity(intent);
-                }
-                else if (userid.trim().equals("root") && password.trim().equals("payment")){
-
-                    Intent intent = new Intent(getApplicationContext(),non_subs_pay.class);
-                    startActivity(intent);
-                }
                 else {
                     try {
                         Connection con = connectionClass.CONN();
