@@ -47,7 +47,7 @@ public class non_subs_pay extends AppCompatActivity {
     CheckBox pay_box;
     TableLayout t1;
     String clientId = MqttClient.generateClientId();
-    String MQTTHOST = "tcp://172.16.116.131:1883";
+    String MQTTHOST = "tcp://172.16.116.136:1883";
     MqttAndroidClient client;
     ArrayList<String> id = new ArrayList<String>();
 

@@ -204,11 +204,29 @@ public class After_login extends AppCompatActivity implements AdapterView.OnItem
                         //System.out.println( "COLUMN " + i + " = " + rs.getObject(i) );
                     }
                 }
+                if((day-(count/3)>0)){
+                    Carb = Carb / (day - (count / 3));
+                    Fat = Fat / (day - (count / 3));
+                    Protien = Protien / (day - (count / 3));
+                    Cal = Cal / (day - (count / 3));
 
-                Carb = Carb/(day-(count/3));
-                Fat = Fat/(day-(count/3));
-                Protien = Protien/(day-(count/3));
-                Cal = Cal/(day-(count/3));
+                    if(Cal < 1800 || Cal > 3200) {
+                        calView.setTextColor(getResources().getColor(R.color.dark_red));
+                        carbView.setTextColor(getResources().getColor(R.color.dark_red));
+                        fatView.setTextColor(getResources().getColor(R.color.dark_red));
+                        protView.setTextColor(getResources().getColor(R.color.dark_red));
+                    }
+                    else{
+                        if (Carb < (45 * Cal) / 100 || Carb > (65 * Cal) / 100)
+                            carbView.setTextColor(getResources().getColor(R.color.dark_red));
+
+                        if (Fat < (20 * Cal) / 100 || Fat > (35 * Cal) / 100)
+                            fatView.setTextColor(getResources().getColor(R.color.dark_red));
+
+                        if (Protien < 40 || Protien > 64)
+                            protView.setTextColor(getResources().getColor(R.color.dark_red));
+                    }
+                }
 
                 Log.d("day",Integer.toString(day));
                 Log.d("count",Integer.toString(count));
@@ -217,22 +235,7 @@ public class After_login extends AppCompatActivity implements AdapterView.OnItem
                 total_waste.setText(Waste);
                 total_due.setText(Double.toString(Cost));
 
-                if(Cal < 1800 || Cal > 3200) {
-                    calView.setTextColor(getResources().getColor(R.color.dark_red));
-                    carbView.setTextColor(getResources().getColor(R.color.dark_red));
-                    fatView.setTextColor(getResources().getColor(R.color.dark_red));
-                    protView.setTextColor(getResources().getColor(R.color.dark_red));
-                }
-                else{
-                    if (Carb < (45 * Cal) / 100 || Carb > (65 * Cal) / 100)
-                        carbView.setTextColor(getResources().getColor(R.color.dark_red));
 
-                    if (Fat < (20 * Cal) / 100 || Fat > (35 * Cal) / 100)
-                        fatView.setTextColor(getResources().getColor(R.color.dark_red));
-
-                    if (Protien < 40 || Protien > 64)
-                        protView.setTextColor(getResources().getColor(R.color.dark_red));
-                }
                 calView.setText(Float.toString(Cal));
                 protView.setText(Float.toString(Protien));
                 fatView.setText(Float.toString(Fat));

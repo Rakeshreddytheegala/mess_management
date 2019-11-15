@@ -40,6 +40,7 @@ public class scannerActivity extends AppCompatActivity implements ZXingScannerVi
     private ZXingScannerView scannerView;
     String clientId = MqttClient.generateClientId();
     String MQTTHOST = "tcp://172.16.116.131:1883";
+    String HOST1 = "tcp://172.16.116.136:1883";
     String channel;
     MqttAndroidClient client;
 
@@ -50,6 +51,8 @@ public class scannerActivity extends AppCompatActivity implements ZXingScannerVi
         setContentView(scannerView);
 
         channel = getIntent().getExtras().getString("channel");
+        if(channel.equals("waste"))
+            MQTTHOST = HOST1;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
